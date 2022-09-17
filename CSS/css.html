@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Events</title>
+</head>
+<style>
+    #btn{
+        color:blue;
+        padding: 5px 5px 10px 10px;
+        background: black;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>HELLO</h1>
+        <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus quis aliquam sunt asperiores harum
+            veritatis dignissimos soluta. Voluptas explicabo repellendus ratione eaque eos odio pariatur nam, aliquam
+            iusto eius quasi?
+        </p>
+        <button id = "btn" onclick="toggle()" class="btn">Show/Hide</button>
+    </div>
+    <script>
+        let para = document.getElementById('para');
+        para.addEventListener('mouseover',()=>{
+            alert("Inside");
+            console.log(para);
+        });
+        function toggle(){
+            if(para.style.display == 'none'){
+                para.style.display = 'block';
+            }else{
+                para.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.toolbox-container{
+    display: flex;
+    height: 8rem;
+    background-color: #4b4b4b;
+    align-items: center;
+}
+.filter{
+    display: flex;
+    height: 4rem;
+    width: 16rem;
+    margin-left: 3rem;
+    background-color: #3d3d3d;
+    justify-content: space-around;
+    align-items: center;  
+}
+.filter>*{
+    width: 3rem;
+    height: 2rem;
+    border-radius: 0.2rem;
+}
+.blue{
+    background-color: lightblue;
+}
+.green{
+    background-color: lightgreen;
+}
+.red{
+    background-color: red;
+}
+.black{
+    background-color: darkturquoise;
+}
+.action{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 4rem;
+    width: 8rem;
+    margin-left: 3rem;
+    background-color: #3d3d3d;  
+}
+.action>*{
+    padding: 0;
+    margin: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #3d3d3d;
+}
+.action i{
+    font-size: xx-large;
+    color: aliceblue;
+}
+.action>*:hover{
+    background-color: lightcoral;
+    
+}
+.modal-container{
+    height: 20rem;
+    width: 30rem;
+    display: none;
+    background-color: #3d3d3d;
+    position: absolute;
+    top: 12rem;
+    left: calc(50% - 15rem);
+    border-radius: 0.5rem;
+    /* box-shadow: rgba(46, 53, 240, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;} */
+}
+    .text-area{
+    height: 100%;
+    width: 75%;
+    padding: 1rem;
+    resize: none;
+    border: none;
+    outline: none;
+    background-color: #4b4b4b;
+    font-size: x-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.priority-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 25%;
+    background-color: blue;
+}
+.priority-containerColor{
+    height: 2.5rem;
+    width: 60%;
+    border-radius: 0.5rem;
+}
+.border{
+    border: 4px solid black;
+}
+.main-container{
+    display: flex;
+    height: calc(100%-8rem);
+    width: 100%;
+    padding: 2rem;
+    flex-wrap: wrap;
+    gap: 6rem; 
+}
+.ticket-container{
+    display: flex;
+    flex-direction: column;
+    height: 12rem;
+    width: 16rem;
+    border: 1px solid;
+}
+.id{
+    height: 1rem;
+    width: 100%;
+}
+.task{
+    height: 10rem;
+    width: 100%;
+    background-color: lightgreen;
+    font-size: x-large;
+    outline: none;
+}
+.lock{
+    height: 1.5rem;
+    width: 100%;
+    background-color: teal;
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 1.5rem;
+}

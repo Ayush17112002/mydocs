@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json</title>
+</head>
+<body>
+    <div class="container">
+        <p>Read me.</p>
+    </div>
+    <script>
+        let jsonObj = {
+            name : "ayush",
+            course : "IT",
+            college : "MAIT",
+            friend : "Sachin"
+        }
+        let jsonString = JSON.stringify(jsonObj); //it will convert js object to string
+        let newjsonobj = JSON.parse(jsonString);
+        console.log(jsonObj, jsonString);
+    </script>
+</body>
+</html>

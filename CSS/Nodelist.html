@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>apple</li>
+        <li>orange</li>
+        <li>guava</li>
+        <li>grapes</li>
+    </ul>
+    <div><h1>Fruits</h1></div>
+    <div>Vegeiis</div>
+    <script>
+        let f = document.querySelectorAll("ul"); 
+        let ul = document.querySelector("ul"); //it returns first element that matches the condition, even ul is collection of several li items, it is not an array but just element
+        let li = document.querySelectorAll("li"); //it returns nodelist
+        console.log(typeof(li), typeof(ul));
+        let newele = document.createElement("li");
+        newele.innerText = "hello";
+        f[0].insertBefore(newele, li[2]);
+    </script>   
+</body>
+</html>

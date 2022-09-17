@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>  <!--it is the diffins algo-->
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script> <!--it is the tool that apply changes to the dom-->
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <title>Document</title>
+    <style>
+        #root{
+            height: 10rem;
+            width: 10rem;
+            background-color: green;
+        }
+        #sec{
+            position: fixed;
+            height: 10rem;
+            width: 10rem;
+            top: 20rem;
+            left: 30rem;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <div id="sec"></div>
+</body>
+    <script type="text/babel">
+        function Element(){
+            return (
+                <button type="submit">Submit</button>
+            )
+        } 
+        function Main(){
+            return (
+                //using react.fragment for wrapping does not put them into an element
+                <React.Fragment>
+                    <Element/>
+                    <Element/>
+                </React.Fragment>
+            )
+        }
+        let root = document.getElementById("root");
+        let sec = document.getElementById("sec");
+        ReactDOM.render(<Main/>,root); //for root component
+        ReactDOM.render(<Element/>,sec); //for sec component
+        
+    </script>
+</html>

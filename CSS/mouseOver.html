@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>  
+    #box{
+        height: 20rem;
+        width: 20rem;
+        margin: auto;
+        border: none;
+        display: flex;   
+    }
+    </style>
+</head>
+<body>
+    <div class="win"></div>
+    <div id="box"></div>
+    <script>
+        let box = document.querySelector("div");
+        box.addEventListener("mouseenter", (e)=>{
+            let img = document.createElement("img");
+            img.src = "download.jpg";
+            img.alt = "Image Not Found";
+            img.style.width = "100%";
+            img.style.height = "100%";
+            box.appendChild(img);
+            e.stopImmediatePropagation();
+        })
+        box.addEventListener("mouseleave", (e)=>{
+            let img = box.firstElementChild;
+            img.remove();
+            e.stopImmediatePropagation();   
+        })
+    </script>
+</body>
+</html>

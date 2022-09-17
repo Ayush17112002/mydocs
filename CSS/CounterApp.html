@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>  <!--it is the diffins algo-->
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script> <!--it is the tool that apply changes to the dom-->
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+    <script type = "text/babel">
+        // class Counter extends React.Component{
+        //     constructor(){
+        //         super();
+        //         this.state={
+        //             count:0
+        //         }
+        //     }
+        //     inc = ()=>{
+        //         this.setState({
+        //             count : this.state.count+1
+        //         })
+        //     }
+        //     render(){
+        //         return (
+        //             <React.Fragment>
+        //                     <span>{this.state.count}</span>
+        //                     <button id = 'btn' onClick={this.inc}></button>
+        //               </React.Fragment>
+        //         )
+        //     }
+        // }
+        // ReactDOM.render(<Counter/>, document.getElementById('root'));
+        //this is inheritancei.e. class counter takes all properties of ReactComponents
+        class Counter extends React.Component{
+            constructor(){
+                super();
+                this.state={
+                    count:0
+                }
+            }
+            inc=()=>{
+                this.setState({
+                    count : this.state.count+1
+                })
+            }
+            render(){
+                return(
+                    <React.Fragment>
+                        <button onClick = {this.inc}>+</button>
+                        <h1>{this.state.count}</h1>    
+                    </React.Fragment>
+                )
+                }
+        }
+        ReactDOM.render(<Counter/>, document.getElementById('root'));
+    </script>
+</html>

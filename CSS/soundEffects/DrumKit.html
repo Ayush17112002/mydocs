@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRUM-KIT</title>
+    <link rel="stylesheet" href="DrumKit.css">
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">
+            <p class="icon">D</p>
+            <p>Dog</p>
+        </div>
+        <div class="inner">
+            <p class="icon">D</p>
+            <p>Drum</p>
+        </div>
+        <div class="inner">
+            <p class="icon">A</p>
+            <p>Arcade</p>
+        </div>
+        <div class="inner">
+            <p class="icon">R</p>
+            <p>Rocket</p>
+        </div>
+        <div class="inner">
+            <p class="icon">S</p>
+            <p>Sweep</p>
+        </div>
+    </div>    
+</body>
+<script>
+    let divEle = document.querySelectorAll('.inner');
+    console.log(divEle);
+    let helperList = ['./dog.wav','./drum.wav','./arcade.wav','./rocket.wav','./sweep.wav'];
+    divEle.forEach((myicon,index)=>{
+        myicon.addEventListener('click',(e)=>{
+            console.log(myicon);
+            let music = new Audio(`${helperList[index]}`);
+            myicon.classList.add('color');
+            music.play();
+        })
+    })
+    divEle.forEach((myicon,index)=>{
+        myicon.addEventListener('transitionend',function(e){
+            if(e.propertyName != 'transform') return;
+            console.log(this);
+        })
+    })
+</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: space-around;
+        }
+        .card{
+            border: 1px solid;
+            height: 5rem;
+            width: 5rem;
+            padding: 5px;
+            box-sizing: border-box;
+            box-shadow: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="blue"></div>
+    <div class="card" id="red"></div>
+    <div class="card" id="yellow"></div>
+    <div class="card" id="violet"></div>
+    <div class="card" id="pink"></div>
+    <div class="card" id="black"></div>
+    <div class="card" id="brown"></div>
+    <div class="card" id="green"></div>
+    <script>
+        let box = document.querySelectorAll('div');
+        //box is an array of all divs [0,1,2,3..]
+        let classes = document.getElementsByClassName("card");
+        console.log(box);
+        console.log(classes);
+        for(let i = 0; i < box.length; i++){
+            console.log("hello");
+            box[i].addEventListener("dblclick", function(){
+                let myid = box[i].getAttribute("id");
+                let myclass = box[i].getAttribute("class");
+                if(myid === "used"){
+                    let classlist = box[i].classList;
+                    box[i].setAttribute("id", classlist[1]);
+                    let toberem = classlist[1];
+                    classlist.remove(toberem);
+                    let currBox = document.getElementById(toberem);
+                    currBox.style.backgroundColor = "white";
+                }else{
+                    let currBox = document.getElementById(myid);
+                    let classlist = box[i].classList;
+                    classlist.add(myid);
+                    box[i].setAttribute("id", "used");
+                    currBox.style.backgroundColor = myid;
+                }
+            })
+        }
+
+    </script>
+</body>
+</html>

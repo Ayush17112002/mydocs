@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            display: flex;
+            justify-content: center;
+            height: 3rem;
+            width: 10rem;
+            border: 4px solid black;
+            margin: auto;
+        }
+        p{
+            display: none;
+            font-size: larger;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id = "pass">
+    <p>CAPS ON</p>
+</body>
+<script>
+    let ip = document.getElementById("pass");
+    let pele = document.getElementsByTagName("p");
+    let shiftKey=0;
+    document.documentElement.addEventListener("keydown", (e)=>{
+      if(e.key === "Shift"){
+        shiftKey = 1;
+      }
+    })
+    document.documentElement.addEventListener("keyup", (e)=>{
+      if(e.key === "Shift"){
+        shiftKey = 0;
+      }
+    })
+    ip.addEventListener("keydown", (e)=>{
+        if(e.getModifierState("CapsLock")){
+            pele[0].style.display = "block";
+            e.preventDefault(); 
+        }else{
+            pele[0].style.display = "none";
+            if(shiftKey === 0){
+                e.preventDefault();
+            }
+        }
+    })
+</script>
+</html>

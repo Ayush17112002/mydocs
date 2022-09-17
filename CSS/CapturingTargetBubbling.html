@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            box-sizing: border-box;
+            position: absolute;
+        }
+        #red{
+            height: 5rem;
+            width: 5rem;
+            top: 4rem;
+            left: 4rem;
+            background-color: red;
+        }
+        #blue{
+            height: 20rem;
+            width: 20rem;
+            background-color: blue;
+        }
+        #green{
+            height: 15rem;
+            width: 15rem;
+            top: 2rem;
+            left: 2rem;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id = "blue" class="box">
+        <div id="green" class="box">
+            <div id="red" class="box"></div>
+        </div>    
+    </div>
+    <script>
+        let blue = document.getElementById("blue");
+        let red = document.getElementById("red");
+        let green = document.getElementById("green");
+        blue.addEventListener("dblclick",(e)=>{
+            console.log("hellob");
+            alert(e.eventPhase);
+        })
+        green.addEventListener("click",(e)=>{
+            console.log("hellog");
+            alert(e.eventPhase);
+            e.stopPropagation();
+        })
+        red.addEventListener("click",(e)=>{
+            alert(e.eventPhase);
+            console.log("hellor");
+        })
+    </script>
+</body>
+</html>

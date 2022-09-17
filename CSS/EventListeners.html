@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button><h1>LOGIN</h1></button>
+    <script>
+        //dom manipulation using the document object provided by the browser
+        let btn = document.querySelector("button");
+        btn.addEventListener("click",function(e){
+            let newdiv = document.querySelector("body");
+            let create = document.createElement("div");
+            newdiv.append(create);
+            create.innerHTML = "<h1>hello</h1>"; //OR create.innertext = "hello" only text
+        })
+
+    </script>
+</body>
+</html>

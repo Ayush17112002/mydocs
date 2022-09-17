@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            align-content: center;    
+        }
+        .card{
+            height: 10rem;
+            width: 10rem;
+            margin: 5px;
+            border: 1px solid black;
+        }
+        .card.red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card red"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+</body>
+    <script>
+        //using previous siblings
+        let allCards = document.querySelectorAll(".card");
+        let redEle = document.querySelector(".card.red");
+        let tmp = redEle.previousElementSibling;
+        while(tmp){
+            tmp.remove();
+            tmp = redEle.previousElementSibling;
+        }
+        tmp = redEle.nextElementSibling;
+        while(tmp){
+            tmp.remove();
+            tmp = redEle.nextElementSibling;
+        }
+    </script>
+</html>

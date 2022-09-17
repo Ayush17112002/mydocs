@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .film{
+            display: flex;
+            position: absolute;
+            top: 10rem;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;    
+        }
+        h1{
+            background-color: red;
+            text-align: center;
+        }
+        .movies{
+            height: 10rem;
+            width: 10rem;
+            margin: 2rem;
+            background-color: greenyellow;
+            border: 2px solid black;
+        }
+        p{
+            font-style:italic;
+            font-size: xx-large;
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>BOOK MY SHOW</h2>
+    <select style="position: absolute; left: 50%;">
+        <option>none</option>
+        <option>comedy</option>
+        <option>romance</option>
+        <option>action</option>
+    </select>
+    <div class = "film">
+    <div class = "movies">
+        <h1>MOVIE1</h1>
+        <!-- helllo -->
+        <p class = "action"><h2>A</h2></p>
+    </div>
+    <div class = "movies">
+        <h1>MOVIE1</h1>
+        <p class = "comedy"><h2>C</h2></p>
+    </div>
+    <div class = "movies">
+        <h1>MOVIE1</h1>
+        <p class = "comedy"><h2>C</h2></p>
+    </div>
+    <div class = "movies">
+        <h1>MOVIE1</h1>
+        <p class = "action"><h2>A</h2></p>
+    </div>
+    <div class = "movies">
+        <h1>MOVIE1</h1>
+        <p class = "romance"><h2>R</h2></p>
+    </div>
+    <div class = "movies">
+        <h1>MOVIE1</h1>
+        <p class = "romance"><h2>R</h2></p>
+    </div>
+    <div class = "movies">
+        <h1>MOVIE1</h1>
+        <p class = "romance"><h2>R</h2></p>
+    </div>
+    <div class = "movies">
+        <h1>MOVIE1</h1>
+        <p class = "romance"><h2>R</h2></p>
+    </div>
+    <div class = "movies">
+        <h1>MOVIE1</h1>
+        <p class = "action"><h2>A</h2></p>
+    </div>
+    <div class = "movies">
+        <h1>MOVIE1</h1>
+        <p class = "action"><h2>A</h2></p>
+    </div>
+</div>
+    <script>
+        //allmovies -> will contain html list of all elements of flex
+        let allmovies = document.querySelectorAll(".movies");
+        
+        //
+        let select = document.querySelector("select");
+        select.addEventListener("change", (e)=>{
+            let selVal = select.value;
+            if(selVal === "none"){
+                //display all
+                allmovies.forEach(function(movie){
+                    movie.style.display = "block";
+                })
+            }else{
+                //print only those div whose p tag's class name matches to the selval
+                allmovies.forEach((mov)=>{
+                    let pele = mov.querySelector("p");
+                    if(pele.getAttribute("class") === selVal){
+                        mov.style.display = "block";
+                    }else{
+                        mov.style.display = "none";
+                    }
+                })
+            }
+        })
+    </script>
+</body>
+</html>

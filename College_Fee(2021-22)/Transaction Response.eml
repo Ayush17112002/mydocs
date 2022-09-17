@@ -1,0 +1,152 @@
+Delivered-To: aayushgupta023@gmail.com
+Received: by 2002:a0c:8441:0:0:0:0:0 with SMTP id l59csp295860qva;
+        Thu, 19 Aug 2021 07:02:11 -0700 (PDT)
+X-Received: by 2002:a17:90a:9cf:: with SMTP id 73mr15355828pjo.136.1629381731467;
+        Thu, 19 Aug 2021 07:02:11 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1629381731; cv=none;
+        d=google.com; s=arc-20160816;
+        b=fkE5owJ2EVH1laOkVWJmZQyzo9bfrRG1yUnNWe6MRLaiTi9Yc/3h/6sNAYiR2N38d1
+         /tD3Tg4NU7fZX4pOsF3lNF4zKV+OlZxGOitOpuXfmqcjk6HUF+uHPdij3bDiQ8shdAR4
+         Lq9rasZBPhep1cyMZlRkBcP+d+RiZUQAtIofDpkpnvG+zexmUmEWlNNzjiYYVEB94S3g
+         L5XZmRWe2Tx/mjbFcYmOidl0JKNNwVvcqLblZlTV4xyHMxkDfxYkpTs6/2uII7/nxEKS
+         yFbPMtmhP9nb4y2tljJWTvaJHtldKVznLVXlv0ofeNGV/PcSOD4LnmcUzhg8HwsvEE+/
+         bK7g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=UqO8G7bzaVbzzX6XJ8EJFYUixNL8k6RWPxWs15f/Tlk=;
+        b=faIPkpDLIFS/MniLKtpsTjGK3AcpVGar4wHZEdjk+0qYEKtEiMJxn4WnhCTotQJwy6
+         XqiU8aIugSHWbVKwmZOXtemLiHI73/FDZeon2Qm+5WFljPdT0UkWpf64JBEsID/1gNRc
+         HP2CF2iGEDTKzv2FEPQqXPFbiMtJlcKKl1D0v2gtNNlVVqNBL36Y8eM8wb87+faiPW33
+         gtWknDcsmuCt/kA+hNiXewrOZvJ8cExGuOazxDsZlgj++e9kr0kFzXUhqv04gxzI2ny8
+         2fbN2iiTEueDt3LEZ8Pw90xX4g+Gwr8Gc2BFWdl0z2q82R5Np6nv+6WYgWuczBpwCVwu
+         vsTA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b="Pk/uzWvW";
+       spf=pass (google.com: domain of puneetgpt89@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=puneetgpt89@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <puneetgpt89@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id o21sor972750ybg.1.2021.08.19.07.02.11
+        for <aayushgupta023@gmail.com>
+        (Google Transport Security);
+        Thu, 19 Aug 2021 07:02:11 -0700 (PDT)
+Received-SPF: pass (google.com: domain of puneetgpt89@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b="Pk/uzWvW";
+       spf=pass (google.com: domain of puneetgpt89@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=puneetgpt89@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=UqO8G7bzaVbzzX6XJ8EJFYUixNL8k6RWPxWs15f/Tlk=;
+        b=Pk/uzWvWYW13dJEFh3ZK5E/HUkFIE9g0jaCwQdh7CaM9OZhp6ChT+SxlOzvS4KJHLE
+         VHLtNcs0qMKHnbaviX3MNw3dJioedwh1KwT8uTsPSqN6LG/XFUuE4Jz8V+gCzj/MiXJc
+         CAUBTp93PiivrL1NnPPiZHkzFti0vb/TVTm/2HOeH/UwMK6CadlVIhVGt3kqoWurpwSM
+         k8CDyUR7L/iEOG+1BTsoGGycqcpcATr6i8yigw8oOaGJPtuRgjFdjtnXoxCBI61bFoq3
+         T2lkbYmVzQZtXindonZj5Z94EyFy+fmn9h98pqSeKg7MIngU+5u7/fXHrzEyYp9gFIMK
+         hbUg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=UqO8G7bzaVbzzX6XJ8EJFYUixNL8k6RWPxWs15f/Tlk=;
+        b=SGV48BmFi9fN8OYrOpKMGBxGyJB+Hv4rEbTcepgbB50ZYaiwnjxiNF9fsRXqBok9ry
+         b96ET8W012UOU0RjyrZG7s0JEx74tDcYYS+MDpQYHu3fIiK1DiMv+Qvh4oGhZrJINs0P
+         DjCNC8wn+7ERjpbBDhjqt2LwmwqzKfZnkXvWu+LTJfjWg8Gu/pw0XrmDDEUv86e46Vne
+         eCRzh8aKjKtVK5uuxd0/TqQyl1ASnwYl9ELiUjr2Z6521e4TXwqvLBXhROzAetL3Ajqv
+         4nyvKOjEQG3JsvChnJsg7s4iqx9SaX4PwxkTmNJASeA5nZgYd+8Ak/fG5TUAniu4Bnp+
+         HZrQ==
+X-Gm-Message-State: AOAM531QS+4AQBWSvJoPMkFLUuFCoJYL7NE+YGAoxrw8/08QBaGtTln/
+	GyUh3PslDIXvkijP7N79F2VL5YAaSV0Ic/BaI9yJbYYrcWw=
+X-Google-Smtp-Source: ABdhPJz1jO3PKtJDeDZBgi0W17kmJj7Xp9UAkK9k81EXouGbJIP29mdPwtzyFMoB5/dJaztP12hSWETyitScDnPxm/M=
+X-Received: by 2002:a25:6d08:: with SMTP id i8mr17745510ybc.100.1629381730837;
+ Thu, 19 Aug 2021 07:02:10 -0700 (PDT)
+MIME-Version: 1.0
+References: <2107455956.307702.1629381589556@ATAWSOTS>
+In-Reply-To: <2107455956.307702.1629381589556@ATAWSOTS>
+From: Puneet Kumar Gupta <puneetgpt89@gmail.com>
+Date: Thu, 19 Aug 2021 19:31:56 +0530
+Message-ID: <CADP-wz-sbCxJpApMqkaaQxepp3wBy62mVQz3-y1j=W-fmGkXdg@mail.gmail.com>
+Subject: Fwd: Transaction Response
+To: "aayushgupta023@gmail.com" <aayushgupta023@gmail.com>
+Content-Type: multipart/alternative; boundary="00000000000045285e05c9e9ff61"
+
+--00000000000045285e05c9e9ff61
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+From: <admin@atomtech.in>
+Date: Thu, 19 Aug 2021, 7:29 pm
+Subject: Transaction Response
+To: <Puneetgpt89@gmail.com>
+
+
+Dear Ayush Gupta
+
+You have successfully made a payment of =E2=82=B9 133200.00 for your order =
+on
+MAHARAJA AGRASEN INSTITUTE OF TECHNOLGY using Atom Gateway. The Atom
+Transaction Reference No. for this payment is 11000040988017 (details
+annexed below).
+
+*Transaction Details*
+Merchant Name: MAHARAJA AGRASEN INSTITUTE OF TECHNOLGY
+The charge will appear on your credit card / Account statement as MAHARAJA
+AGRASEN INSTITUTE OF TECHNOLGY
+Transaction Date & Time 2021-08-19T19:28:25
+Merchant Transaction Reference No. eshf_611e61dec02371629381086
+Atom Transaction Reference No. 11000040988017
+Payment Mode CC
+Bank Name Union Bank of India
+Amount 133200.00
+Customer Name Ayush Gupta
+Customer Email Id Puneetgpt89@gmail.com
+Transaction Status Success
+
+
+For any queries, Please contact the merchant MAHARAJA AGRASEN INSTITUTE OF
+TECHNOLGY
+
+Regards,
+Atom Team
+
+PLEASE DO NOT REPLY TO THIS MAIL AS THIS IS AN AUTO GENERATED MAIL AND
+REPLIES / QUERIES TO THIS EMAIL ID ARE NOT ATTENDED
+
+--00000000000045285e05c9e9ff61
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto"></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" cla=
+ss=3D"gmail_attr">---------- Forwarded message ---------<br>From: <span dir=
+=3D"auto">&lt;<a href=3D"mailto:admin@atomtech.in">admin@atomtech.in</a>&gt=
+;</span><br>Date: Thu, 19 Aug 2021, 7:29 pm<br>Subject: Transaction Respons=
+e<br>To:  &lt;<a href=3D"mailto:Puneetgpt89@gmail.com">Puneetgpt89@gmail.co=
+m</a>&gt;<br></div><br><br><div><table align=3D"left"><tr><td colspan=3D"2"=
+><p>Dear Ayush  Gupta </p><p>You have successfully made a payment of =E2=82=
+=B9 133200.00 for your order on MAHARAJA AGRASEN INSTITUTE OF TECHNOLGY usi=
+ng Atom Gateway. The Atom Transaction Reference No. for this payment is 110=
+00040988017 (details annexed below).</p></td></tr><tr><td>=C2=A0 =C2=A0</td=
+></tr><tr><td colspan=3D"2"> <b>Transaction Details</b> </td></tr><tr><td><=
+table cellspacing=3D"0" cellpadding=3D"1" border=3D"1" width=3D"80%" style=
+=3D"border-collapse:collapse" align=3D"left"><tr><td colspan=3D"2"><table><=
+tr><td colspan=3D"2">Merchant Name: MAHARAJA AGRASEN INSTITUTE OF TECHNOLGY=
+ <br>The charge will appear on your credit card / Account statement as MAHA=
+RAJA AGRASEN INSTITUTE OF TECHNOLGY</td></tr></table></td></tr><tr><td>Tran=
+saction Date &amp; Time</td><td>2021-08-19T19:28:25</td></tr><tr><td>Mercha=
+nt Transaction Reference No.</td><td> eshf_611e61dec02371629381086</td></tr=
+><tr><td>Atom Transaction Reference No.</td><td>11000040988017</td></tr><tr=
+><td>Payment Mode</td><td>CC</td></tr><tr><td>Bank Name</td><td>Union Bank =
+of India</td></tr><tr><td>Amount</td><td>133200.00</td></tr><tr><td>Custome=
+r Name</td><td>Ayush  Gupta </td></tr><tr><td>Customer Email Id</td><td><a =
+href=3D"mailto:Puneetgpt89@gmail.com" target=3D"_blank" rel=3D"noreferrer">=
+Puneetgpt89@gmail.com</a></td></tr><tr><td>Transaction Status</td><td>Succe=
+ss</td></tr></table></td></tr><tr><td>=C2=A0 =C2=A0</td></tr><tr><td><p>For=
+ any queries, Please contact the merchant MAHARAJA AGRASEN INSTITUTE OF TEC=
+HNOLGY</p><p>Regards,<br>Atom Team</p><p>PLEASE DO NOT REPLY TO THIS MAIL A=
+S THIS IS AN AUTO GENERATED MAIL AND REPLIES / QUERIES TO THIS EMAIL ID ARE=
+ NOT ATTENDED</p></td></tr></table></div></div>
+
+--00000000000045285e05c9e9ff61--
